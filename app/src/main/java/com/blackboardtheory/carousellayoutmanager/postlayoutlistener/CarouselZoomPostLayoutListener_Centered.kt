@@ -1,13 +1,15 @@
-package com.blackboardtheory.carousellayoutmanager
+package com.blackboardtheory.carousellayoutmanager.postlayoutlistener
 
 import android.view.View
+import com.blackboardtheory.carousellayoutmanager.CarouselLayoutManager
+import com.blackboardtheory.carousellayoutmanager.ItemTransformation
 
 /**
  * Created by bdevereaux3 on 2/13/18.
  */
 
 
-class CarouselZoomPostLayoutListener : CarouselLayoutManager.PostLayoutListener {
+class CarouselZoomPostLayoutListener_Centered : CarouselLayoutManager.PostLayoutListener {
 
     override fun transformChild(child: View, itemPositionToCenterDiff: Float, orientation: Int): ItemTransformation {
         val scale: Float = (2 * (2 * -StrictMath.atan(Math.abs(itemPositionToCenterDiff) + 1.0) / Math.PI + 1)).toFloat()
@@ -28,3 +30,4 @@ class CarouselZoomPostLayoutListener : CarouselLayoutManager.PostLayoutListener 
         return ItemTransformation(scale, scale, translateX, translateY)
     }
 }
+

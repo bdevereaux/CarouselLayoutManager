@@ -47,8 +47,8 @@ class CarouselLayoutManager(val orientation: Int, val circleLayout: Boolean) : R
         }
     }
 
-    private var mDecoratedChildWidth: Int? = 0
-    private var mDecoratedChildHeight: Int? = 0
+    private var mDecoratedChildWidth: Int? = null
+    private var mDecoratedChildHeight: Int? = null
 
     var mOrientation: Int = orientation
     private var mCircleLayout: Boolean = circleLayout
